@@ -1,12 +1,12 @@
-# === Unity project: StealthPVP-UnityProject ===
+# === Unity project: LethalInternship ===
 
-/StealthPVP-UnityProject/[Ll]ibrary/
-/StealthPVP-UnityProject/[Tt]emp/
-/StealthPVP-UnityProject/[Oo]bj/
-/StealthPVP-UnityProject/[Bb]uild/
-/StealthPVP-UnityProject/[Bb]uilds/
-/StealthPVP-UnityProject/[Ll]ogs/
-/StealthPVP-UnityProject/[Uu]ser[Ss]ettings/
+/LethalInternship/[Ll]ibrary/
+/LethalInternship/[Tt]emp/
+/LethalInternship/[Oo]bj/
+/LethalInternship/[Bb]uild/
+/LethalInternship/[Bb]uilds/
+/LethalInternship/[Ll]ogs/
+/LethalInternship/[Uu]ser[Ss]ettings/
 *.log
 
 # Blender backups
@@ -14,13 +14,13 @@
 *.blend1.meta
 
 # MemoryCaptures
-/StealthPVP-UnityProject/[Mm]emoryCaptures/
+/LethalInternship/[Mm]emoryCaptures/
 
 # Recordings
-/StealthPVP-UnityProject/[Rr]ecordings/
+/LethalInternship/[Rr]ecordings/
 
 # Rider
-/StealthPVP-UnityProject/Assets/Plugins/Editor/JetBrains*
+/LethalInternship/Assets/Plugins/Editor/JetBrains*
 *.DotSettings.user
 
 # VS cache
@@ -67,20 +67,20 @@ mono_crash.*
 crashlytics-build.properties
 
 # TestRunner generated
-/StealthPVP-UnityProject/InitTestScene*.unity*
+/LethalInternship/InitTestScene*.unity*
 
 # Addressables
-/StealthPVP-UnityProject/ServerData
-/StealthPVP-UnityProject/Assets/StreamingAssets/aa*
-/StealthPVP-UnityProject/Assets/AddressableAssetsData/link.xml*
-/StealthPVP-UnityProject/Assets/Addressables_Temp*
-/StealthPVP-UnityProject/Assets/AddressableAssetsData/*/*.bin*
+/LethalInternship/ServerData
+/LethalInternship/Assets/StreamingAssets/aa*
+/LethalInternship/Assets/AddressableAssetsData/link.xml*
+/LethalInternship/Assets/Addressables_Temp*
+/LethalInternship/Assets/AddressableAssetsData/*/*.bin*
 
 # Visual Scripting
-/StealthPVP-UnityProject/Assets/Unity.VisualScripting.Generated/VisualScripting.Flow/UnitOptions.db
-/StealthPVP-UnityProject/Assets/Unity.VisualScripting.Generated/VisualScripting.Flow/UnitOptions.db.meta
-/StealthPVP-UnityProject/Assets/Unity.VisualScripting.Generated/VisualScripting.Core/Property Providers
-/StealthPVP-UnityProject/Assets/Unity.VisualScripting.Generated/VisualScripting.Core/Property Providers.meta
+/LethalInternship/Assets/Unity.VisualScripting.Generated/VisualScripting.Flow/UnitOptions.db
+/LethalInternship/Assets/Unity.VisualScripting.Generated/VisualScripting.Flow/UnitOptions.db.meta
+/LethalInternship/Assets/Unity.VisualScripting.Generated/VisualScripting.Core/Property Providers
+/LethalInternship/Assets/Unity.VisualScripting.Generated/VisualScripting.Core/Property Providers.meta
 
 # Auto-generated playmode-test scenes
-/StealthPVP-UnityProject/Assets/InitTestScene*.unity*
+/LethalInternship/Assets/InitTestScene*.unity*
