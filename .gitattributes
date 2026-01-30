@@ -1,0 +1,5 @@
+*.png filter=lfs diff=lfs merge=lfs -text
+*.gbc filter=lfs diff=lfs merge=lfs -text
+*.o filter=lfs diff=lfs merge=lfs -text
+LethalInternship/Temp/FSTimeGet-d6e384f39e2384b7088afdf2fd0eb2b2 filter=lfs diff=lfs merge=lfs -text
+LethalInternship/Temp/workerlic filter=lfs diff=lfs merge=lfs -text
