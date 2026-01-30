@@ -426,6 +426,9 @@
 -analyzer:"/Applications/Unity/Hub/Editor/6000.0.59f2/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.SourceGenerators.dll"
 -analyzer:"/Applications/Unity/Hub/Editor/6000.0.59f2/Unity.app/Contents/Tools/Unity.SourceGenerators/Unity.UIToolkit.SourceGenerator.dll"
 "Assets/Other/TutorialInfo/Scripts/Readme.cs"
+"Assets/Scripts/CameraController.cs"
+"Assets/Scripts/CharacterAnimationController.cs"
+"Assets/Scripts/CharacterMovement.cs"
 -langversion:9.0
 /deterministic
 /optimize+
