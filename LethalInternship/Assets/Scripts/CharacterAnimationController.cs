@@ -1,4 +1,5 @@
 using UnityEngine;
+using Unity.Netcode;
 
 [RequireComponent(typeof(CharacterMovement))]
 public class CharacterAnimationController : MonoBehaviour
@@ -8,6 +9,8 @@ public class CharacterAnimationController : MonoBehaviour
     [SerializeField] private float attackRepeatInterval = 0.4f;
 
     private float nextAttackTime;
+    private NetworkObject networkObject;
+    private bool hasNetworkObject;
 
     private static readonly int IsRunningHash = Animator.StringToHash("isRunning");
     private static readonly int IsWalkingHash = Animator.StringToHash("isWalking");
@@ -27,10 +30,18 @@ public class CharacterAnimationController : MonoBehaviour
         {
             animator = GetComponentInChildren<Animator>();
         }
+
+        networkObject = GetComponent<NetworkObject>();
+        hasNetworkObject = networkObject != null;
     }
 
     private void Update()
     {
+        if (hasNetworkObject && !networkObject.IsOwner)
+        {
+            return;
+        }
+
         if (animator == null || movement == null)
         {
             return;

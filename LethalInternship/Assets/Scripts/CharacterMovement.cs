@@ -1,4 +1,5 @@
 using UnityEngine;
+using Unity.Netcode;
 
 [RequireComponent(typeof(CharacterController))]
 public class CharacterMovement : MonoBehaviour
@@ -20,6 +21,8 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private Transform cameraTransform;
 
     private CharacterController controller;
+    private NetworkObject networkObject;
+    private bool hasNetworkObject;
     private float verticalVelocity;
 
     public Vector2 MoveInput { get; private set; }
@@ -35,10 +38,17 @@ public class CharacterMovement : MonoBehaviour
     private void Awake()
     {
         controller = GetComponent<CharacterController>();
+        networkObject = GetComponent<NetworkObject>();
+        hasNetworkObject = networkObject != null;
     }
 
     private void Update()
     {
+        if (hasNetworkObject && !networkObject.IsOwner)
+        {
+            return;
+        }
+
         ReadMoveInput();
         UpdateMovement();
         UpdateStateFlags();
