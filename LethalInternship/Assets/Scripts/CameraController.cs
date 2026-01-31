@@ -16,6 +16,11 @@ public class CameraController : MonoBehaviour
 
     private Vector3 positionVelocity;
 
+    public void SetTarget(Transform newTarget)
+    {
+        target = newTarget;
+    }
+
     private void LateUpdate()
     {
         if (target == null)
