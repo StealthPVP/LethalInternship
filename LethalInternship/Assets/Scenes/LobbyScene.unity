@@ -684,10 +684,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  offset: {x: 0, y: 13, z: -4}
+  offset: {x: 0, y: 3.5, z: -6.5}
   smoothTime: 0.15
   lockRotation: 1
-  rotationAngles: {x: 70, y: 0}
+  rotationAngles: {x: 25, y: 0}
   rotationSmoothTime: 0.1
 --- !u!1 &334630317
 GameObject:
