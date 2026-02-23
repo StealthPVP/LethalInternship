@@ -6,6 +6,7 @@ public class LocalPlayerCameraBinder : NetworkBehaviour
 {
     [SerializeField] private CameraController cameraController;
     [SerializeField] private Transform followTarget;
+    [SerializeField] private CharacterMovement characterMovement;
 
     public override void OnNetworkSpawn()
     {
@@ -22,6 +23,17 @@ public class LocalPlayerCameraBinder : NetworkBehaviour
         if (cameraController != null)
         {
             cameraController.SetTarget(followTarget != null ? followTarget : transform);
+            cameraController.SetYawAlignmentTarget(transform);
+
+            if (characterMovement == null)
+            {
+                characterMovement = GetComponent<CharacterMovement>();
+            }
+
+            if (characterMovement != null)
+            {
+                characterMovement.SetCameraTransform(cameraController.CameraTransform);
+            }
         }
         else
         {

@@ -23,6 +23,10 @@ public class CharacterMovement : MonoBehaviour
     [SerializeField] private bool useCameraRelative = true;
     [SerializeField] private Transform cameraTransform;
 
+    [Header("Camera-Relative Behavior")]
+    [SerializeField] private bool horizontalOnlyTurnsInPlace = true;
+    [SerializeField] private float turnInPlaceSpeed = 240f;
+
     private CharacterController controller;
     private NetworkObject networkObject;
     private bool hasNetworkObject;
@@ -74,12 +78,20 @@ public class CharacterMovement : MonoBehaviour
 
     private void UpdateMovement()
     {
+        Vector3 moveDir = GetMoveDirection(MoveInput);
+        bool turningInPlace = ShouldTurnInPlace(MoveInput);
+        if (turningInPlace)
+        {
+            float yawStep = MoveInput.x * turnInPlaceSpeed * Time.deltaTime;
+            transform.Rotate(0f, yawStep, 0f, Space.World);
+            moveDir = Vector3.zero;
+        }
+
         bool walkHeld = Input.GetKey(KeyCode.LeftShift) || Input.GetKey(KeyCode.RightShift);
-        IsMoving = MoveInput.sqrMagnitude > 0.01f;
+        IsMoving = moveDir.sqrMagnitude > 0.01f;
         IsWalking = IsMoving && walkHeld;
         IsRunning = IsMoving && !walkHeld;
 
-        Vector3 moveDir = GetMoveDirection(MoveInput);
         MoveDirection = moveDir;
 
         float targetSpeed = IsMoving ? (IsWalking ? walkSpeed : runSpeed) : 0f;
@@ -137,6 +149,11 @@ public class CharacterMovement : MonoBehaviour
             : Quaternion.Slerp(transform.rotation, targetRotation, speed * Time.deltaTime);
     }
 
+    public void SetCameraTransform(Transform newCameraTransform)
+    {
+        cameraTransform = newCameraTransform;
+    }
+
     private Vector3 GetMoveDirection(Vector2 input)
     {
         if (input.sqrMagnitude < 0.001f)
@@ -160,5 +177,17 @@ public class CharacterMovement : MonoBehaviour
         Vector3 direction = right * input.x + forward * input.y;
         direction.Normalize();
         return direction;
+    }
+
+    private bool ShouldTurnInPlace(Vector2 input)
+    {
+        if (!useCameraRelative || !horizontalOnlyTurnsInPlace)
+        {
+            return false;
+        }
+
+        bool horizontalPressed = Mathf.Abs(input.x) > 0.01f;
+        bool forwardPressed = Mathf.Abs(input.y) > 0.01f;
+        return horizontalPressed && !forwardPressed;
     }
 }

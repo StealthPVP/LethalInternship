@@ -620,13 +620,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 330585543}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.5735764, y: 0, z: 0, w: 0.8191521}
+  m_LocalRotation: {x: 0.5735764, y: -0, z: -0, w: 0.8191521}
   m_LocalPosition: {x: 0, y: 13, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 690651393}
-  m_LocalEulerAnglesHint: {x: 70, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &330585547
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -684,11 +684,33 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  offset: {x: 0, y: 3.5, z: -6.5}
-  smoothTime: 0.15
-  lockRotation: 1
-  rotationAngles: {x: 25, y: 0}
-  rotationSmoothTime: 0.1
+  yawAlignmentTarget: {fileID: 0}
+  pivotOffset: {x: 0, y: 1.6, z: 0}
+  yawSpeed: 220
+  pitchSpeed: 170
+  minPitch: -10
+  maxPitch: 60
+  minDistance: 2.5
+  maxDistance: 10
+  zoomStep: 3.5
+  defaultDistance: 6
+  zoomSmoothTime: 0.08
+  pivotSmoothTime: 0.1
+  rotationSmoothSpeed: 100
+  collisionMask:
+    serializedVersion: 2
+    m_Bits: 4294967295
+  collisionRadius: 0.2
+  collisionBuffer: 0.1
+  collisionInSmoothTime: 0.04
+  collisionOutSmoothTime: 0.12
+  alignTargetYawOnRightMouseHold: 1
+  targetAlignSpeed: 100
+  recenterBehindOnMove: 1
+  recenterBehindOnTurn: 1
+  moveRecenterSpeed: 180
+  turnYawDeltaThreshold: 0.15
+  fallbackMoveSpeedThreshold: 0.1
 --- !u!1 &334630317
 GameObject:
   m_ObjectHideFlags: 0

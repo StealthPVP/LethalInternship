@@ -198,6 +198,7 @@ MonoBehaviour:
   ShowTopMostFoldoutHeaderGroup: 1
   cameraController: {fileID: 0}
   followTarget: {fileID: 4912928695677640773}
+  characterMovement: {fileID: 0}
 --- !u!143 &552209960931634171
 CharacterController:
   m_ObjectHideFlags: 0
@@ -241,10 +242,12 @@ MonoBehaviour:
   gravity: -20
   groundedGraceTime: 0.12
   fallingVelocityThreshold: -1
-  rotationSpeed: 12
+  rotationSpeed: 9
   allowWASD: 1
   useCameraRelative: 1
   cameraTransform: {fileID: 0}
+  horizontalOnlyTurnsInPlace: 1
+  turnInPlaceSpeed: 240
 --- !u!114 &7934625216598770003
 MonoBehaviour:
   m_ObjectHideFlags: 0
