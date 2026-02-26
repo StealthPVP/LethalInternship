@@ -14,9 +14,12 @@ namespace Core.GameState
             GameOver,
             Victory
         }
+
         private GameState _currentState = GameState.Menu;
         public GameState CurrentState => _currentState;
-        public Action<GameState> OnStateChanged;
+
+        public event Action<GameState> OnStateChanged;
+
         public void SetState(GameState p_newState)
         {
             if (_currentState == p_newState)
